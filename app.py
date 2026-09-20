@@ -484,5 +484,10 @@ with gr.Blocks(title="AgriSense AI - Weather-Based Farming Advisory Agent") as d
     )
 
 if __name__ == "__main__":
-    # Launch Gradio Application locally
-    demo.queue().launch(server_name="127.0.0.1", server_port=7860, share=False, css=CUSTOM_CSS)
+    demo.queue().launch(
+        server_name="0.0.0.0",
+        server_port=int(os.getenv("PORT", "7860")),
+        share=False,
+        css=CUSTOM_CSS
+    )
+    
